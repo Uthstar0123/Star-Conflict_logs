@@ -1,4 +1,4 @@
-```markdown
+
 # Star Conflict Log Analyzer
 
 ![Python](https://img.shields.io/badge/python-3.10-blue)
@@ -119,5 +119,5 @@ pyinstaller --onefile --windowed --icon=icon.ico --add-data "icon.ico;." main.py
 
  - Uthstar01  
 [DonationAlerts](https://www.donationalerts.com/r/restramer) (если хотите поддержать)
-```
+
 
