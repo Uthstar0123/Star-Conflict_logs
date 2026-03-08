@@ -12,7 +12,7 @@ class HistoryManager:
             try:
                 df = pd.read_json(HistoryManager.HISTORY_FILE)
                 # Теперь ожидаем efficiency в колонках
-                expected_cols = ["nick", "damage", "heal", "tank", "kills", "efficiency", "match_date"]
+                expected_cols = ["nick", "damage", "self_heal", "team_heal", "tank", "kills", "efficiency", "match_date"]
                 for col in expected_cols:
                     if col not in df.columns:
                         df[col] = 0 if col != "match_date" else ""

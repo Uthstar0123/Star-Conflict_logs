@@ -185,25 +185,21 @@ class TopTab:
         if history.empty or history.shape[0] == 0:
             self.clear_all()
             return
-
         stats = history.groupby("nick").agg(
-            matches=("nick", "count"),  # ← вот здесь было главное
+            matches=("nick", "count"),
             total_damage=("damage", "sum"),
-            total_heal=("heal", "sum"),
+            total_self=("self_heal", "sum"),
+            total_team=("team_heal", "sum"),
             total_tank=("tank", "sum"),
-            total_kills=("kills", "sum"),
             total_efficiency=("efficiency", "sum")
         ).reset_index()
-
         stats["matches"] = stats["matches"].astype(int)
-
+        stats["total_heal"] = stats["total_self"] + stats["total_team"]
         stats["avg_damage"] = stats["total_damage"] / stats["matches"].replace(0, 1)
         stats["avg_heal"] = stats["total_heal"] / stats["matches"].replace(0, 1)
         stats["avg_tank"] = stats["total_tank"] / stats["matches"].replace(0, 1)
         stats["avg_efficiency"] = stats["total_efficiency"] / stats["matches"].replace(0, 1)
-
         stats = stats.sort_values("avg_efficiency", ascending=False)
-
         self.tree_data = stats.to_dict("records")
         self.update_table_from_sorted_data()
 
@@ -248,9 +244,11 @@ class TopTab:
             return
         stats = history.groupby("nick").agg({
             "damage": "sum",
-            "heal": "sum",
+            "self_heal": "sum",
+            "team_heal": "sum",
             "tank": "sum"
         }).reset_index()
+        stats["heal"] = stats["self_heal"] + stats["team_heal"]
         dark_mode = self.main_window.theme['dark']
         bg_color = '#0d1117' if dark_mode else '#ffffff'
         fg_color = '#e6edf3' if dark_mode else '#000000'
