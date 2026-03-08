@@ -102,7 +102,7 @@
 
 ## 🛠️ Сборка в исполняемый файл (опционально)
 
-Для создания `.exe` используйте PyInstaller:
+Для создания `.exe` используйте Nuitka:
 ```bash
 pip install nuitka
 python -m nuitka --onefile --standalone --windows-disable-console --enable-plugin=tk-inter --include-data-dir=gui=gui --include-data-dir=core=core --include-data-dir=utils=utils --include-data-files=icon.ico=icon.ico main.py
