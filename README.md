@@ -104,8 +104,8 @@
 
 Для создания `.exe` используйте PyInstaller:
 ```bash
-pip install pyinstaller
-pyinstaller --onefile --windowed --icon=icon.ico --add-data "icon.ico;." main.py
+pip install nuitka
+python -m nuitka --onefile --standalone --windows-disable-console --enable-plugin=tk-inter --include-data-dir=gui=gui --include-data-dir=core=core --include-data-dir=utils=utils --include-data-files=icon.ico=icon.ico main.py
 ```
 
 ## 📄 Лицензия
