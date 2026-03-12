@@ -116,7 +116,7 @@ class MainWindow:
 
     def open_donate_link(self):
         import webbrowser
-        donate_url = "https://www.donationalerts.com/r/restramer"  # ← замени на свою ссылку
+        donate_url = "https://www.donationalerts.com/r/restramer"  
         webbrowser.open(donate_url)
 
     def update(self, df: pd.DataFrame):
@@ -354,4 +354,5 @@ class MainWindow:
 
             self.status_var.set("История загружена")
         except:
+
             pass  # если что-то упадёт — не мешаем запуску
