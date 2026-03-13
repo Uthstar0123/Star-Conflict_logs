@@ -39,7 +39,7 @@
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/Uthstar0123/Star-Conflict_logs
-   cd star-conflict-log-analyzer
+   cd Star-Conflict_logs
    ```
 
 2. (Рекомендуется) Создайте виртуальное окружение:
