@@ -38,7 +38,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/yourusername/star-conflict-log-analyzer.git
+   git clone https://github.com/Uthstar0123/star-conflict-log-analyzer.git
    cd star-conflict-log-analyzer
    ```
 
