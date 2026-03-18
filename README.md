@@ -26,7 +26,13 @@
 
 ## 🖥️ Скриншоты
 
-![Главное окно](screenshots/main.png)
+![Главное окно](screenshots/main1.png)
+![Главное окно](screenshots/main2.png)
+![Главное окно](screenshots/main3.png)
+![Главное окно](screenshots/main4.png)
+![Главное окно](screenshots/main5.png)
+![Главное окно](screenshots/main6.png)
+![Главное окно](screenshots/main7.png)
 
 
 ## 📦 Требования
